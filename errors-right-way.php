@@ -11,9 +11,11 @@
 		$error_crypt = new class {
 			private $securekey;
 			private $method = 'AES-256-CBC';
+			
 			function __construct() {
 				$this->securekey = hash('sha256', 'bardzo długi klucz do dekodowania błędów systemowych przez programistę.', TRUE);
 			}
+			
 			function encrypt(string $data): string
 			{
 				$ivSize = openssl_cipher_iv_length($this->method);
@@ -48,7 +50,7 @@
 
 	try
 	{
-
+		/* Twój kod */
 	}
 	catch (Exception $e)
 	{	
